@@ -59,3 +59,96 @@ header h1 {
         width: 90%
     }
 }
+
+/* RECIPE TITLE */
+#recipes {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+#recipes:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+#recipes img {
+    width: 100%;
+    height: 180px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+#recipes h2 {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #ff6b35;
+}
+#recipes p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #444;
+}
+#recipes button {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background: #ff6b35;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/*add-recipes*/
+#share label {
+    display: block;
+    font-weight: bold;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #333;
+}
+#share input[type="text"],
+#share input[type="file"],
+#share textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    outline: none;
+    background: #fffaf4;
+    transition: 0.3s ease;
+}
+#share textarea {
+    resize: none;
+}
+#share input:focus,
+#share textarea:focus {
+    border: 2px solid #ff6b35;
+    background: white;
+}
+#share button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 15px;
+    background: #ff6b35;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+#share button:hover {
+    background: #e85a2c;
+    transform: scale(1.02);
+}
+h1 {
+      margin-top: 15px;
+    font-size: 20px;
+    color: #ff6b35;
+}

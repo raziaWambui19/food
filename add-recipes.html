@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Food Website</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <header><h1>Share with us</h1></header>
+</head>
+<div>
+      <nav >
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="recipes.html">RECIPES</a></li>
+            <li><a href="add-recipes.html">ADD-RECIPES</a></li>
+        </ul>
+    </nav>
+</div>
+<body>
+    <main>
+        
+        <p>Share your recipes with us </p>
+        <div id="share">
+            <form id="addRecipeForm">
+                <label for="NameOfFood">Name2</label>
+                <input type="text" id="NameOfFood" placeholder="Name of food" required> <br>
+
+                <label for="Image">Image</label>
+                <input type="file" id="Image" accept="image/*" placeholder="image" required> <br>
+
+                <label for="Description">Description</label>
+                <textarea id="Description" rows="6" placeholder="Short description" required></textarea> <br>
+
+                <label for="complementaries">Eatem With</label>
+                <textarea id="EatenWith" rows="5" placeholder="Example: Ugali, Kachumbari, sukuma wiki...." required></textarea> <br>
+
+                <label for="Ingredient">Ingredient</label>
+                <textarea id="Ingredient" rows="7" placeholder="Example: 2 cups flour, 1 tsp salt, 1 inion...."required></textarea> <br>
+
+                <button type="submit">Submit Recipe</button>
+                
+            </form>
+
+        </div>
+        
+    </main>
+    <script src="script.js"></script>
+    
+</body>
+</html>
