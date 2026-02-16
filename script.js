@@ -5,7 +5,7 @@ const nameInput = document.getElementById("Name");
 const emailInput = document.getElementById("Email");
 
 // select the form inside the div with id ="form"
-const form = document.querySelector("#loginForm");
+const form = document.querySelector("form");
 
 // LOGIN FUNCTION
 function loginUser(event) {
@@ -31,11 +31,13 @@ window.location.href = "recipes.html";
 }
 
 // Add event listener to the form submit
+if (form && nameInput && emailInput)
 form.addEventListener("submit", loginUser);
 
 //add-recipe
 // Get form and input elements
 const addForm = document.getElementById("addRecipeForm");
+if (addForm) {
 const name2Input = document.getElementById("NameOfFood");
 const imageInput = document.getElementById("Image");
 const descInput = document.getElementById("Description");
@@ -47,11 +49,11 @@ addForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
 // convert image file to base64 so we can store it in localstorage
-const file = imageInpute.files[0];
+const file = imageInput.files[0];
 const reader = new FileReader();
 
 reader.onload = function() {
-    const recipe ={
+    const recipe = {
         name2: name2Input.value.trim(),
         Image: reader.result, // Base64 string
         description: descInput.value.trim(),
@@ -82,3 +84,33 @@ if (file) {
     alert("please upload an image!");
 }
 });
+ }
+
+ // Function to display recipes on the recipes page
+function displayRecipes() {
+    const dynamicRecipes = document.getElementById("dynamicRecipes");
+    if (!dynamicRecipes) return;
+
+    const recipes = JSON.parse(localStorage.getItem("recipes")) || [];
+    dynamicRecipes.innerHTML = "";
+
+    recipes.forEach(recipe => {
+        const recipeDiv = document.createElement("div");
+        recipeDiv.className = "recipe";
+
+        recipeDiv.innerHTML = `
+            <h2>${recipe.name2}</h2>
+            <img src="${recipe.Image}" alt="${recipe.name2}" width="300">
+            <p><strong>Description:</strong> ${recipe.description}</p>
+            <p><strong>Eaten With:</strong> ${recipe.eatenWith}</p>
+            <p><strong>Ingredients:</strong> ${recipe.ingredients.map((ing) => `<li>${ing}</li>`).join("")}
+            </ul>
+            <hr>
+        `;
+
+        dynamicRecipes.appendChild(recipeDiv);
+    });
+}
+
+// Call displayRecipes when the page loads
+window.addEventListener("load", displayRecipes);
